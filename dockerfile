@@ -1,6 +1,2 @@
-FROM ubuntu:latest
-WORKDIR /app
-ADD . /app
-RUN apt update && apt install python -y
-CMD python /app/main.py
-LABEL color=red
+FROM nginx:alpine
+COPY index.html /usr/share/nginx/html
