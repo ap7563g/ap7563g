@@ -2,20 +2,31 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Building') {
             steps {
-                echo 'Building..'
+                echo 'The Code will be now be build into an artifact'
             }
         }
-        stage('Test') {
+        stage('Artifact Archiving') {
             steps {
-                echo 'Testing..'
+                echo 'The Artifact will be uploaded to an artifact repository'
+            }
+        }
+        stage('Testing') {
+            steps {
+                echo 'The Artifact will be tested'
+            }
+        }
+        stage('Staging') {
+            steps {
+                echo 'The Artifact staged onto the staging server'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                echo 'The Software will now be deployed'
             }
         }
+
     }
 }
